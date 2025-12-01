@@ -1,86 +1,101 @@
-# AR Speaker System - Augmented Reality Audio Experience
+# Sistem Speaker AR - Pengalaman Audio Augmented Reality
 
-## Project Overview
+## Gambaran Umum Proyek
 
-This project is an Augmented Reality (AR) speaker system application developed using Unity and Vuforia SDK. The application allows users to place virtual speakers in the real environment using image targets and control music playback through interactive touch buttons. The system can play multiple audio tracks simultaneously across different speaker models, creating an immersive audio experience in augmented reality.
+Proyek ini adalah aplikasi sistem speaker Augmented Reality (AR) yang dikembangkan menggunakan Unity dan SDK Vuforia. Aplikasi ini memungkinkan pengguna untuk menempatkan speaker virtual di lingkungan nyata menggunakan target gambar dan mengontrol pemutaran musik melalui tombol sentuh interaktif. Sistem ini dapat memutar beberapa trek audio secara bersamaan di berbagai model speaker, menciptakan pengalaman audio yang imersif dalam augmented reality.
 
-## Architecture
+## Arsitektur
 
-### Project Structure
+### Struktur Proyek
+
 ```
 My Project/
-├── Assets/                 # Main project assets
-│   ├── Editor/             # Editor-specific scripts and tools
-│   ├── HQ Acoustic system/ # 3D models and materials for speaker systems
-│   ├── Materials/          # Material assets
-│   ├── Prefabs/            # Pre-built game objects
-│   │   └── Ghost Models/   # Visual feedback models for placement
-│   ├── Resources/          # Runtime-loadable assets
-│   │   └── Music/          # Audio files
-│   ├── Scenes/             # Unity scene files
-│   ├── Scripts/            # C# script files
-│   └── StreamingAssets/    # Assets copied to build without processing
-├── Library/                # Unity-generated project data
-├── Logs/                   # Build and runtime logs
-├── Packages/               # Project packages and dependencies
-├── ProjectSettings/        # Project configuration settings
-├── QCAR/                   # Vuforia AR target data
-├── Temp/                   # Temporary files
-└── UserSettings/           # User-specific settings
+├── Assets/                 # Aset utama proyek
+│   ├── Editor/             # Script dan alat khusus editor
+│   ├── HQ Acoustic system/ # Model 3D dan material untuk sistem speaker
+│   ├── Materials/          # Aset material
+│   ├── Prefabs/            # Objek game yang telah dibuat sebelumnya
+│   │   └── Ghost Models/   # Model visual untuk umpan balik penempatan
+│   ├── Resources/          # Aset yang dimuat saat runtime
+│   │   └── Music/          # File audio
+│   ├── Scenes/             # File scene Unity
+│   ├── Scripts/            # File script C#
+│   └── StreamingAssets/    # Aset disalin ke build tanpa diproses
+├── Library/                # Data proyek yang dibuat oleh Unity
+├── Logs/                   # Log build dan runtime
+├── Packages/               # Paket dan dependensi proyek
+├── ProjectSettings/        # Pengaturan konfigurasi proyek
+├── QCAR/                   # Data target AR Vuforia
+├── Temp/                   # File sementara
+└── UserSettings/           # Pengaturan spesifik pengguna
 ```
 
-### Core Components
+### Komponen Utama
 
-#### Scripts
-- **ARSpeakerManager.cs**: Main audio control system that manages music playback across multiple speakers
-- **SimpleTouchButton.cs**: Handles touch interaction for play/pause functionality
+#### Script
 
-#### Scenes
-- **SampleScene.unity**: Main scene with three AR image targets (Speaker1, Speaker2, Speaker3) and virtual speakers
+- **ARSpeakerManager.cs**: Sistem kontrol audio utama yang mengelola pemutaran musik di berbagai speaker
+- **SimpleTouchButton.cs**: Menangani interaksi sentuh untuk fungsionalitas putar/jeda
 
-#### Assets and Prefabs
-- **HQ Acoustic System**: 3D models of speaker components (Amplifier, Satellite speakers, Subwoofer)
-- **Ghost Models**: Visual placeholders that appear during AR speaker placement
-- **Prefabs**: Pre-configured speaker objects (Mid-Range Speaker, Speaker Tower, Subwoofer, etc.)
+#### Scene
 
-#### Audio Resources
-- **Music Folder**: Contains audio tracks for playback (In Dreamland, Middle C, Orb Sound, etc.)
+- **SampleScene.unity**: Scene utama dengan tiga target gambar AR (Speaker1, Speaker2, Speaker3) dan speaker virtual
 
-## Detailed Folder Information
+#### Aset dan Prefab
 
-### Assets Folder
-The main content directory containing all project assets, scripts, and resources.
+- **HQ Acoustic System**: Model 3D dari peralatan akustik berkualitas tinggi
+- **Ghost Models**: Placeholder visual yang muncul selama penempatan speaker AR
+- **Prefabs**: Objek speaker yang telah dikonfigurasi (Mid-Range Speaker, Speaker Tower, Subwoofer, dll.)
+
+#### Sumber Daya Audio
+
+- **Folder Music**: Berisi file audio untuk pemutaran (In Dreamland, Middle C, Orb Sound, dll.)
+
+## Informasi Folder Terperinci
+
+### Folder Assets
+
+Directory konten utama yang berisi semua aset proyek, script, dan sumber daya.
 
 #### Editor
-Contains Unity editor extensions and custom tools for the development workflow.
+
+Berisi ekstensi editor Unity dan alat khusus untuk alur kerja pengembangan.
 
 #### HQ Acoustic System
-This folder contains 3D models of high-quality acoustic equipment:
-- **FBX Models**: Amplifier.FBX, Satellite_center.FBX, Satellite_hight.FBX, Satellite_low.FBX, Subwoofer.FBX
-- **Prefab Variants**: Prefab versions of each model ready for use in scenes
-- **Textures**: Diffuse, normal, and specular texture maps for realistic materials
+
+Folder ini berisi model 3D dari peralatan akustik berkualitas tinggi:
+
+- **Model FBX**: Amplifier.FBX, Satellite_center.FBX, Satellite_hight.FBX, Satellite_low.FBX, Subwoofer.FBX
+- **Prefab**: Versi prefab dari setiap model siap digunakan di scene
+- **Tekstur**: Peta tekstur difus, normal, dan specular untuk material realistis
 
 #### Materials
-Contains material assets for visual rendering:
-- **Dark.mat**: Dark colored material
-- **Deep Black.mat**: Pure black material
-- **Glass.mat**: Transparent glass material
-- **Glow.mat**: Emissive glowing material
-- **Temporary Material.mat**: Placeholder material
+
+Berisi aset material untuk rendering visual:
+
+- **Dark.mat**: Material berwarna gelap
+- **Deep Black.mat**: Material hitam pekat
+- **Glass.mat**: Material transparan kaca
+- **Glow.mat**: Material berpendar emisi
+- **Temporary Material.mat**: Material sementara
 
 #### Prefabs
-Pre-configured game objects that can be instantiated in scenes:
-- **Ghost Models**: Visual feedback objects for AR placement
+
+Objek game yang telah dikonfigurasi yang dapat diinstansiasi di scene:
+
+- **Ghost Models**: Objek visual untuk umpan balik penempatan AR
   - Ghost Midrange, Ghost Speaker Tower, Ghost Subwoofer, Ghost Tweeter
-- **Interactive Elements**:
+- **Elemen Interaktif**:
   - Edit Speaker UI, Music Queue Menu, Now Playing Menu
-- **Speaker Objects**:
+- **Objek Speaker**:
   - Mid-Range Speaker, Speaker Tower, Subwoofer, Tweeter
-- **UI Elements**: Orb, Window prefabs
+- **Elemen UI**: Prefab Orb, Window
 
 #### Resources
-Assets loaded at runtime:
-- **Music**: Contains all audio files used in the application
+
+Aset yang dimuat saat runtime:
+
+- **Music**: Berisi semua file audio yang digunakan dalam aplikasi
   - In Dreamland (Default Song).mp3
   - Middle C.mp3
   - Orb Sound.mp3
@@ -90,155 +105,181 @@ Assets loaded at runtime:
   - White Noise.mp3
 
 #### Scenes
-Contains the main Unity scene:
-- **SampleScene.unity**: Main AR application scene with camera, lights, and three image targets
+
+Berisi scene Unity utama:
+
+- **SampleScene.unity**: Scene aplikasi AR utama dengan kamera, lampu, dan tiga target gambar
 
 #### Scripts
-Application logic scripts:
-- **ARSpeakerManager.cs**: Core audio management system
-- **SimpleTouchButton.cs**: Touch interaction handling
+
+Script logika aplikasi:
+
+- **ARSpeakerManager.cs**: Sistem manajemen audio utama
+- **SimpleTouchButton.cs**: Penanganan interaksi sentuh
 
 #### StreamingAssets
-Contains assets that are copied to builds without processing, typically used for data files or assets that need to remain in their original format.
 
-### Library Folder
-Unity-generated folder containing project build data and cached information. This folder should not be committed to version control.
+Berisi aset yang disalin ke build tanpa diproses, biasanya digunakan untuk file data atau aset yang perlu tetap dalam format aslinya.
 
-### Logs Folder
-Contains build and runtime logs for debugging purposes.
+### Folder Library
 
-### Packages Folder
-Contains Unity package dependencies including:
-- **com.ptc.vuforia.engine-11.4.4.tgz**: Vuforia AR SDK
-- **manifest.json**: Package dependencies and versions
-- **packages-lock.json**: Locked package versions
+Folder yang dibuat oleh Unity berisi data build proyek dan informasi cache. Folder ini sebaiknya tidak disimpan ke kontrol versi.
 
-### ProjectSettings Folder
-Contains all project-specific settings, including:
-- **VuforiaConfiguration.asset**: Vuforia AR settings and license key
-- **AudioManager.asset**: Audio system configuration
-- **GraphicsSettings.asset**: Graphics rendering settings
-- **InputManager.asset**: Input system configuration
-- Various other Unity engine settings
+### Folder Logs
 
-### QCAR Folder
-Contains Vuforia AR target data and configuration files.
+Berisi log build dan runtime untuk debugging.
 
-### Temp and UserSettings Folders
-Temporary files and user-specific settings respectively. These are typically excluded from version control.
+### Folder Packages
 
-## Script Functionality
+Berisi dependensi paket Unity termasuk:
+
+- **com.ptc.vuforia.engine-11.4.4.tgz**: SDK AR Vuforia
+- **manifest.json**: Dependensi dan versi paket
+- **packages-lock.json**: Versi paket yang terkunci
+
+### Folder ProjectSettings
+
+Berisi semua pengaturan spesifik proyek, termasuk:
+
+- **VuforiaConfiguration.asset**: Pengaturan dan kunci lisensi Vuforia AR
+- **AudioManager.asset**: Konfigurasi sistem audio
+- **GraphicsSettings.asset**: Pengaturan rendering grafis
+- **InputManager.asset**: Konfigurasi sistem input
+- Berbagai pengaturan mesin Unity lainnya
+
+### Folder QCAR
+
+Berisi data target AR Vuforia dan file konfigurasi.
+
+### Folder Temp dan UserSettings
+
+File sementara dan pengaturan spesifik pengguna masing-masing. Ini biasanya dikecualikan dari kontrol versi.
+
+## Fungsionalitas Script
 
 ### ARSpeakerManager.cs
-The primary audio controller script that:
-- Loads music tracks from the Resources/Music folder at runtime
-- Manages playback status (play/pause) across all active speakers
-- Synchronizes track position when toggling play/pause
-- Finds all GameObjects tagged as "Speakers" to control audio playback
-- Maintains track time to ensure synchronized playback across multiple speakers
+
+Script kontrol audio utama yang:
+
+- Memuat trek musik dari folder Resources/Music saat runtime
+- Mengelola status pemutaran (putar/jeda) di semua speaker aktif
+- Mensinkronkan posisi trek saat beralih putar/jeda
+- Mencari semua GameObject yang diberi tag "Speakers" untuk mengontrol pemutaran audio
+- Menjaga waktu trek untuk memastikan sinkronisasi pemutaran di berbagai speaker
 
 ### SimpleTouchButton.cs
-A simple interaction script that:
-- Detects mouse/touch input on 3D objects
-- Provides visual feedback by moving the button when pressed
-- Calls the ARSpeakerManager to toggle music playback
-- Communicates with the music manager to control audio
 
-## Platform and Build Information
+Script interaksi sederhana yang:
 
-The project is configured for Android deployment:
-- **Minimum SDK Version**: API 29 (Android 10)
-- **Target Architecture**: ARM64
-- **Application Identifier**: com.DefaultCompany.Myproject
-- **Bundle Version**: 0.1
+- Mendeteksi input mouse/sentuh pada objek 3D
+- Memberikan umpan balik visual dengan memindahkan tombol saat ditekan
+- Memanggil ARSpeakerManager untuk beralih pemutaran musik
+- Berkomunikasi dengan manajer musik untuk mengontrol audio
 
-The project includes two APK files (UAS.apk, UAStes.apk) indicating completed builds for Android deployment.
+## Platform dan Informasi Build
 
-## AR Capabilities
+Proyek ini dikonfigurasi untuk deployment Android:
 
-The application uses Vuforia AR SDK version 11.4.4 with:
-- Image target recognition for speaker placement
-- Three defined image targets (Speaker1, Speaker2, Speaker3)
-- Ghost model visualization for speaker placement feedback
-- Real-time rendering of 3D speaker models on recognized targets
-- AR camera with background rendering
+- **SDK Minimum**: API 29 (Android 10)
+- **Arsitektur Target**: ARM64
+- **Identitas Aplikasi**: com.DefaultCompany.Myproject
+- **Versi Bundle**: 0.1
 
-## Audio System
+Proyek ini menyertakan dua file APK (UAS.apk, UAStes.apk) yang menunjukkan build yang telah selesai untuk deployment Android.
 
-The audio implementation features:
-- Runtime loading of audio files from Resources folder
-- Synchronized playback across multiple speakers
-- Position tracking to maintain synchronization
-- Support for multiple speaker types with different audio characteristics
+## Kemampuan AR
 
-## Application Features
+Aplikasi ini menggunakan SDK Vuforia AR versi 11.4.4 dengan:
 
-1. **Multi-speaker AR Audio**: Place multiple virtual speakers in real space
-2. **Touch Controls**: Interactive buttons for play/pause functionality
-3. **Synchronized Playback**: Audio tracks stay in sync across all speakers
-4. **Runtime Music Loading**: Dynamically loads music from Resources folder
-5. **Visual Feedback**: Ghost models provide placement guidance
-6. **3D Audio Experience**: Immersive spatial audio in augmented reality
+- Pengenalan target gambar untuk penempatan speaker
+- Tiga target gambar yang ditentukan (Speaker1, Speaker2, Speaker3)
+- Visualisasi model hantu untuk umpan balik penempatan
+- Rendering 3D real-time dari model speaker pada target yang dikenali
+- Kamera AR dengan rendering latar belakang
 
-## Technical Dependencies
+## Sistem Audio
 
-- Unity Engine (version based on installed template)
+Implementasi audio menampilkan:
+
+- Pemuatan runtime file audio dari folder Resources
+- Pemutaran sinkron di berbagai speaker
+- Pelacakan posisi untuk menjaga sinkronisasi
+- Dukungan untuk berbagai jenis speaker dengan karakteristik audio berbeda
+
+## Fitur Aplikasi
+
+1. **Audio Speaker Multi-AR**: Menempatkan beberapa speaker virtual di ruang nyata
+2. **Kontrol Sentuh**: Tombol interaktif untuk fungsionalitas putar/jeda
+3. **Pemutaran Sinkron**: Trek audio tetap sinkron di semua speaker
+4. **Pemuatan Musik Runtime**: Memuat musik secara dinamis dari folder Resources
+5. **Umpan Balik Visual**: Model hantu memberikan panduan penempatan
+6. **Pengalaman Audio 3D**: Audio spasial imersif dalam augmented reality
+
+## Dependensi Teknis
+
+- Unity Engine (versi berdasarkan template yang terpasang)
 - Vuforia SDK 11.4.4
-- Android Build Support
-- ARCore (for Android AR functionality)
+- Dukungan Build Android
+- ARCore (untuk fungsionalitas AR Android)
 
-## Build Output
+## Output Build
 
-The project includes two APK files:
-- **UAS.apk**: Final project build
-- **UAStes.apk**: Test or development build
+Proyek ini menyertakan dua file APK:
 
-## Development Notes
+- **UAS.apk**: Build proyek akhir
+- **UAStes.apk**: Build uji atau pengembangan
 
-The application was developed with focus on creating an immersive AR audio experience. The code includes Indonesian comments indicating it was developed for an Indonesian academic context. The AR targets are configured to recognize specific physical markers for speaker placement.
+## Catatan Pengembangan
+
+Aplikasi ini dikembangkan dengan fokus pada penciptaan pengalaman audio AR yang imersif. Kode ini menyertakan komentar bahasa Indonesia yang menunjukkan bahwa proyek ini dikembangkan untuk konteks akademik Indonesia. Target AR dikonfigurasi untuk mengenali marker fisik spesifik untuk penempatan speaker.
 
 ---
 
-## Team Roles for Final Assignment
+## Peran Tim untuk Tugas Akhir
 
-1. **Project Lead (Team Coordinator)**
-   - Responsible for overall project management and coordination
-   - Ensures all team members are working on their assigned tasks
-   - Coordinates between different development aspects
-   - Manages project timeline and deliverables
-   - Handles communication with instructors and stakeholders
+1. **Project Lead (Koordinator Tim - Amirul Maulana - F55123039)**
 
-2. **AR Developer (Augmented Reality Specialist)**
-   - Implements and maintains Vuforia AR functionality
-   - Configures image targets and tracking systems
-   - Optimizes AR performance and tracking accuracy
-   - Handles AR-specific challenges like lighting estimation and plane detection
-   - Tests AR functionality on different devices and lighting conditions
+   - Bertanggung jawab atas manajemen proyek secara keseluruhan dan koordinasi
+   - Memastikan semua anggota tim bekerja pada tugas yang ditetapkan
+   - Mengoordinasikan antara berbagai aspek pengembangan
+   - Mengelola jadwal proyek dan target hasil
+   - Menangani komunikasi dengan dosen dan pemangku kepentingan
 
-3. **Audio Systems Engineer**
-   - Develops and maintains the audio playback system
-   - Implements synchronization between multiple speakers
-   - Optimizes audio loading and streaming
-   - Ensures audio quality and performance across devices
-   - Manages audio file formats and compression
+2. **AR Developer (Spesialis Augmented Reality - Anggita Setiawati - F55123092)**
 
-4. **UI/UX Designer**
-   - Designs user interfaces for the AR application
-   - Creates intuitive touch controls for speaker interaction
-   - Develops visual feedback systems for AR interactions
-   - Focuses on user experience and ease of use
-   - Implements visual design guidelines and consistency
+   - Implementasi dan pemeliharaan fungsionalitas Vuforia AR
+   - Konfigurasi target gambar dan sistem pelacakan
+   - Optimasi kinerja AR dan akurasi pelacakan
+   - Menangani tantangan khusus AR seperti estimasi pencahayaan dan deteksi bidang
+   - Pengujian fungsionalitas AR pada berbagai perangkat dan kondisi pencahayaan
 
-5. **3D Model Specialist**
-   - Creates and optimizes 3D models for speakers and UI elements
-   - Ensures 3D models are optimized for mobile AR performance
-   - Implements material and texture optimization
-   - Works on visual effects like ghost models and animations
-   - Manages 3D asset pipeline and quality
+3. **Audio Systems Engineer (Insinyur Sistem Audio - Sri Aswanti - F55123075)**
 
-6. **Quality Assurance & Testing Lead**
-   - Develops and executes testing plans for the AR application
-   - Tests functionality across different devices and platforms
-   - Identifies and documents bugs and issues
-   - Performs user experience testing and gathers feedback
-   - Ensures application stability and performance optimization
+   - Mengembangkan dan memelihara sistem pemutaran audio
+   - Implementasi sinkronisasi antara beberapa speaker
+   - Optimasi pemuatan dan streaming audio
+   - Memastikan kualitas audio dan kinerja di berbagai perangkat
+   - Mengelola format file audio dan kompresi
+
+4. **UI/UX Designer (Desainer UI/UX - Siti Fajriah - F55121028)**
+
+   - Merancang antarmuka pengguna untuk aplikasi AR
+   - Membuat kontrol sentuh intuitif untuk interaksi speaker
+   - Mengembangkan sistem umpan balik visual untuk interaksi AR
+   - Fokus pada pengalaman pengguna dan kemudahan penggunaan
+   - Menerapkan pedoman desain visual dan konsistensi
+
+5. **3D Model Specialist (Spesialis Model 3D - Anugrah Ahmad Wiranto - F55123069)**
+
+   - Membuat dan mengoptimalkan model 3D untuk speaker dan elemen UI
+   - Memastikan model 3D dioptimalkan untuk kinerja AR mobile
+   - Implementasi optimasi material dan tekstur
+   - Bekerja pada efek visual seperti model hantu dan animasi
+   - Mengelola pipeline aset 3D dan kualitas
+
+6. **Quality Assurance & Testing Lead (Pemimpin Jaminan Kualitas & Pengujian - Adelia nur Sakinah - F55121074)**
+   - Mengembangkan dan mengeksekusi rencana pengujian untuk aplikasi AR
+   - Menguji fungsionalitas di berbagai perangkat dan platform
+   - Mengidentifikasi dan mendokumentasikan bug dan masalah
+   - Melakukan pengujian pengalaman pengguna dan mengumpulkan umpan balik
+   - Memastikan stabilitas aplikasi dan optimasi kinerja
